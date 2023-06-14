@@ -11,7 +11,7 @@ import CoreLocation
 //Interface for Home page view
 protocol WeatherHomeViewModelProtocol {
     
-    //View state properties
+    //View state properties - callbacks to view
     var updateProgress: ((Bool) -> Void)? { get set }
     var showResult: ((WeatherResponse) -> Void)? { get set }
     var showError: (() -> Void)? { get set }

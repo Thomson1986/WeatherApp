@@ -25,6 +25,7 @@ final class WeatherHomeViewController: UIViewController {
     @IBOutlet weak var weatherImageView: UIImageView!
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     private var weatherHomeViewModel: WeatherHomeViewModel?
     private var weatherRespository: WeatherRespository?
     private var locationRepository: LocationRepository?
@@ -54,6 +55,9 @@ final class WeatherHomeViewController: UIViewController {
     // MARK: ViewModel Setup
     private func setupViewModel() {
         
+        //This can be moved out - creation of concrete class can be done separately
+        // And inject the interface object to views.
+        // Will put in backlog for now
         weatherRespository = WeatherServiceManager()
         locationRepository = LocationServiceManager()
         guard let weatherRespository = weatherRespository,
@@ -89,6 +93,7 @@ final class WeatherHomeViewController: UIViewController {
     }
     
     //Show activity indicator
+    //Seems this can be improved -  breaking SOLID --may be separate two callback one for show, other to hide.. No conditionals means mostly no logic in view
     private func updateProgress(_ progress: Bool) {
         
         activityIndicator.isHidden = !progress
@@ -125,6 +130,8 @@ final class WeatherHomeViewController: UIViewController {
 // MARK: TextField Delegate Methods
 extension WeatherHomeViewController : UITextFieldDelegate {
         
+    //Just take the user entered and fetch weather data, also dismiss keyboard
+    //Clear tooo.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
