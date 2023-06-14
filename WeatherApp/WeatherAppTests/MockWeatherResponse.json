@@ -1,0 +1,23 @@
+{
+  "coord": {
+    "lon": -0.1257,
+    "lat": 51.5085
+  },
+  "weather": [
+    {
+      "id": 801,
+      "main": "Clouds",
+      "description": "few clouds",
+      "icon": "02n"
+    }
+  ],
+  "main": {
+    "temp": 287.67,
+    "feels_like": 286.48
+  },
+  "wind": {
+    "speed": 3.09,
+    "deg": 10
+  },
+  "name": "London"
+}
