@@ -29,7 +29,7 @@ class WeatherServiceManagerTests: XCTestCase {
         let expectation = expectation(description: "Get Weather data")
         weatherServiceManager.fetchWeather(for: "Irving") { (result) in
             switch result {
-            case .success(let _):
+            case .success( _):
                 expectation.fulfill()
             case .failure(_):
                 XCTFail("Didn't got weather data")
